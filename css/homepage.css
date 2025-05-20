@@ -59,8 +59,8 @@
 
 .gradient-hero h1 {
     color: white;
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
     line-height: 1.1;
 }
 
@@ -70,19 +70,19 @@
 
 .gradient-hero p {
     font-size: var(--font-lg);
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     max-width: 600px;
 }
 
 .gradient-hero {
   position: relative;
-  padding: 6rem 0 3rem;   /* reduce bottom padding if it feels too tall */
+  padding: 6rem 0 3rem;   
 }
 
 .gradient-hero .button {
   position: absolute;
-  bottom: 3rem;           /* move up 3rem instead of 2rem */
-  left:   1rem;           /* move in 1rem from left instead of 2rem */
+  bottom: 6rem;          
+  left:   0rem;          
 }
 
 /* Testimonials Section */
