@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly into Language Learning with Duolingo | Magic Carpet Journey</title>
+    <meta name="description" content="Transform your child's summer with Duolingo's Magic Carpet Journey. Kids learn languages 45% faster with our adaptive learning technology.">
+    <meta name="keywords" content="magic carpet language, Duolingo kids, fly far learn fast, children language learning, summer educational app">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Fly into Language Learning with Duolingo | Magic Carpet Journey">
+    <meta property="og:description" content="Transform your child's summer with Duolingo's Magic Carpet Journey. Kids learn languages 45% faster.">
+    <meta property="og:image" content="https://your-github-pages-url/images/hero-carpet.jpg">
+    <meta property="og:url" content="https://your-github-pages-url/">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://your-github-pages-url/">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for the new sections */
+        .gradient-hero {
+            background: linear-gradient(to right, #1cb0f6, #58cc02);
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gradient-hero h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gradient-hero .highlight {
+            color: #ffde00;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonials-section {
+            background-color: #f7f7f7;
+            padding: var(--space-3xl) 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-lg);
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: var(--space-md);
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--dark-gray);
+        }
+        
+        .learning-styles-section {
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+        
+        .learning-styles-section h2 {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .learning-styles-section p {
+            max-width: 800px;
+            margin: 0 auto var(--space-2xl) auto;
+            font-size: var(--font-lg);
+        }
+        
+        .learning-styles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .learning-style-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .style-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: var(--space-md);
+        }
+        
+        .learning-style-card h3 {
+            margin-bottom: var(--space-md);
+        }
+        
+        .learning-style-card p {
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-base);
+        }
+        
+        .style-illustration {
+            width: 100%;
+            height: 200px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-top: auto;
+        }
+        
+        .style-illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .learning-styles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gradient-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-navigation">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/1.png" alt="Duolingo Logo" width="150" height="40">
+                        </a>
+                    </div>
+                    
+                    <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <ul id="main-menu" class="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="customizer.html" class="nav-link">Magic Carpet</a></li>
+                        <li class="nav-item"><a href="parents-faq.html" class="nav-link">Parents FAQ</a></li>
+                        <li class="nav-item"><a href="signup.html" class="nav-link cta">Start Free Trial</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Animated Gradient Hero Section (like the Netlify example) -->
+        <section class="gradient-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Fly Far. Learn Fast.<br><span class="highlight">With Duolingo!</span></h1>
+                        <p>Children aged 5-11 learn languages 45% faster than adults. Transform your child's summer with the Duolingo Magic Carpet Journey.</p>
+                        <a href="signup.html" class="button primary-cta">Start Your Magic Carpet Journey</a>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="images/duo-carpet.png" alt="Duolingo Owl on Magic Carpet" class="floating">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-text-overlay">
+                        <h2>Watch how the Magic Carpet brings language learning to life!</h2>
+                    </div>
+                    <div class="video-wrapper">
+                        <!-- Replace with your video embed code -->
+                        <div class="video-placeholder">
+                            <button class="play-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Learning Styles Section -->
+        <section class="learning-styles-section">
+            <div class="container">
+                <h2>Personalized Learning Styles</h2>
+                <p>Each child learns differently - the Magic Carpet adapts to their unique learning style</p>
+                
+                <div class="learning-styles-grid">
+                    <div class="learning-style-card">
+                        <div class="style-icon">
+                            <img src="images/visual-icon.png" alt="Visual Learning Icon">
+                        </div>
+                        <h3>Visual Learners</h3>
+                        <p>See colorful, image-based patterns on their carpet</p>
+                        <div class="style-illustration">
+                            <img src="images/visual-learning.jpg" alt="Visual Learning Illustration">
+                        </div>
+                    </div>
+                    
+                    <div class="learning-style-card">
+                        <div class="style-icon">
+                            <img src="images/auditory-icon.png" alt="Auditory Learning Icon">
+                        </div>
+                        <h3>Auditory Learners</h3>
+                        <p>Experience carpets adorned with musical motifs</p>
+                        <div class="style-illustration">
+                            <img src="images/auditory-learning.jpg" alt="Auditory Learning Illustration">
+                        </div>
+                    </div>
+                    
+                    <div class="learning-style-card">
+                        <div class="style-icon">
+                            <img src="images/kinesthetic-icon.png" alt="Kinesthetic Learning Icon">
+                        </div>
+                        <h3>Kinesthetic Learners</h3>
+                        <p>Interact with motion-responsive carpet elements</p>
+                        <div class="style-illustration">
+                            <img src="images/kinesthetic-learning.jpg" alt="Kinesthetic Learning Illustration">
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="customizer.html" class="button secondary-cta">Design Your Magic Carpet</a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">The Magic of Adaptive Learning</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#58cc02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Adaptive Technology</h3>
+                        <p>The Magic Carpet evolves with each learner's journey. Mastered concepts appear as vibrant, fully-formed patterns, while areas needing improvement show as faded designs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1cb0f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Gamification Elements</h3>
+                        <p>Daily streaks add golden threads to the carpet, gems earned appear as sparkling embellishments, and league progression helps your carpet fly higher into the sky.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ce82ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                                <line x1="16" y1="8" x2="2" y2="22"></line>
+                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3>Personalized Journey</h3>
+                        <p>No two carpets are alike. Each Magic Carpet is uniquely shaped by the child's learning style, speed of progress, and personal interests.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffc800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-16h-9l1-4z"></path>
+                            </svg>
+                        </div>
+                        <h3>Accelerated Learning</h3>
+                        <p>Children aged 5-11 learn languages up to 45% faster than adults due to enhanced neuroplasticity. The Magic Carpet visualizes this incredible learning potential.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What Parents & Children Say</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "My son has been using Duolingo's Magic Carpet for just two weeks and his Spanish vocabulary has doubled! The visualization keeps him motivated and he loves seeing his carpet grow more colorful with each lesson."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="images/sarah-avatar.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Mother of 8-year-old Alex</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "The Magic Carpet has transformed language learning from a chore into a magical adventure. My daughter can't wait for her daily lessons to see how her carpet evolves!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="images/michael-avatar.jpg" alt="Michael Rodriguez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Rodriguez</h4>
+                                <p>Father of 7-year-old Sophia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "I love making my magic carpet more beautiful! I learned so many Japanese words and now my carpet has dragons and cherry blossoms on it!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="images/emma-avatar.jpg" alt="Emma">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma</h4>
+                                <p>9-year-old learner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Begin Your Child's Language Journey?</h2>
+                    <p>Start with a 14-day free trial of Super Duolingo and watch their Magic Carpet take flight!</p>
+                    <div class="cta-buttons">
+                        <a href="signup.html" class="button primary-cta">Start 14-Day Free Trial</a>
+                        <a href="customizer.html" class="button secondary-cta">Explore Magic Carpet</a>
+                    </div>
+                    <p class="cta-note">No credit card required. Cancel anytime.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/8.png" alt="Duolingo Logo" width="120" height="32">
+                    </div>
+                    <p class="footer-tagline">Making language learning fun, effective, and completely free.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://carpet-language-flights.lovable.app/" target="_blank">Spanish</a></li>
+                        <li><a href="https://carpet-language-flights.lovable.app/" target="_blank">French</a></li>
+                        <li><a href="https://carpet-language-flights.lovable.app/" target="_blank">Japanese</a></li>
+                        <li><a href="https://carpet-language-flights.lovable.app/" target="_blank">All Languages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Duolingo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="YouTube" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="TikTok" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Trends" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <h3>We Value Your Privacy</h3>
+            <p>We use cookies to enhance your child's learning experience, remember preferences, and analyze how our site is used. We require parental consent as required by data protection regulations.</p>
+            
+            <div class="cookie-buttons">
+                <button id="cookie-accept-all" class="cookie-button accept">Accept All</button>
+                <button id="cookie-essential-only" class="cookie-button essential">Essential Only</button>
+                <button id="cookie-settings" class="cookie-button settings">Cookie Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/gdpr.js"></script>
+</body>
+</html>
