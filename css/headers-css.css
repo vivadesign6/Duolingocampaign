@@ -1,0 +1,104 @@
+/* Header styles for Parents FAQ and Customizer pages */
+
+/* Common header styles */
+.wide-hero {
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.wide-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.wide-hero .container {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 0;
+    width: 100%;
+}
+
+.wide-hero h1 {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.wide-hero p {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+}
+
+/* Customizer Header */
+.customizer-hero {
+    height: 400px;
+}
+
+.customizer-hero .container {
+    text-align: center;
+}
+
+.customizer-hero h1 {
+    font-size: 4rem;
+}
+
+.customizer-hero p {
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+/* FAQ Header */
+.faq-hero {
+    height: 300px;
+    background-color: #58a700;
+}
+
+.faq-hero h1 {
+    font-size: 3.5rem;
+}
+
+.faq-hero p {
+    font-size: 1.25rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .wide-hero {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .customizer-hero h1, 
+    .faq-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .customizer-hero p,
+    .faq-hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wide-hero .container {
+        padding: 3rem 1rem;
+    }
+    
+    .customizer-hero h1, 
+    .faq-hero h1 {
+        font-size: 2rem;
+    }
+}
