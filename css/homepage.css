@@ -74,10 +74,15 @@
     max-width: 600px;
 }
 
+.gradient-hero {
+  position: relative;
+  padding: 6rem 0 3rem;   /* reduce bottom padding if it feels too tall */
+}
+
 .gradient-hero .button {
-    padding: 1rem 2rem;
-    font-size: var(--font-lg);
-    font-weight: 700;
+  position: absolute;
+  bottom: 3rem;           /* move up 3rem instead of 2rem */
+  left:   1rem;           /* move in 1rem from left instead of 2rem */
 }
 
 /* Testimonials Section */
