@@ -1,0 +1,266 @@
+/* responsive.css - Responsive styles for mobile and tablet devices */
+
+/* ========== RESPONSIVE STYLES ========== */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 980px;
+    }
+    
+    .hero-text h1 {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .customizer-grid,
+    .faq-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .faq-sidebar {
+        position: static;
+    }
+
+    .faq-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .faq-categories li {
+        margin-bottom: 0;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --space-3xl: 3rem;
+        --space-2xl: 2.5rem;
+        --font-3xl: 2rem;
+        --font-2xl: 1.75rem;
+        --font-xl: 1.25rem;
+    }
+
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-bottom: var(--space-xl);
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .signup-form-container {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-image {
+        display: none;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--white);
+        box-shadow: var(--shadow-md);
+        padding: 1rem 0;
+        display: none;
+        z-index: 100;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    .video-text-overlay h2 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: var(--space-lg);
+    }
+    
+    .pattern-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .premium-pattern-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .carpet-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .carpet-actions button {
+        width: 100%;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .social-share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-share-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+    
+    .hero-text p {
+        font-size: var(--font-base);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-cta {
+        flex-direction: column;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .color-options {
+        justify-content: center;
+    }
+    
+    .color-option {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .premium-pattern-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cookie-content h3 {
+        font-size: var(--font-lg);
+    }
+    
+    .cookie-content p {
+        font-size: var(--font-xs);
+    }
+    
+    .cookie-button {
+        padding: 0.5rem;
+        font-size: var(--font-sm);
+    }
+    
+    .carpet-stats {
+        flex-wrap: wrap;
+    }
+    
+    .stat {
+        width: 50%;
+        margin-bottom: var(--space-md);
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --font-3xl: 1.75rem;
+        --font-2xl: 1.5rem;
+        --font-xl: 1.25rem;
+        --font-lg: 1.125rem;
+    }
+    
+    .button {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-base);
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .video-text-overlay h2 {
+        font-size: 1.25rem;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+}
