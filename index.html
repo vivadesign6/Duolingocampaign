@@ -219,15 +219,14 @@
             <div class="video-text-overlay">
                 <h2>Watch how the Magic Carpet brings language learning to life!</h2>
             </div>
-            <div class="video-wrapper">
-                <div class="video-placeholder" id="video-placeholder">
-                    <button class="play-button" onclick="loadVideo()">
+            <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                <div id="video-display" onclick="this.innerHTML='<iframe src=&quot;https://www.youtube.com/embed/7EdbbgawACQ?autoplay=1&rel=0&modestbranding=1&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px;&quot;></iframe>'" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1cb0f6 0%, #58cc02 100%); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                    <button style="background: rgba(0,0,0,0.7); border: none; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                     </button>
                 </div>
-                <iframe id="video-iframe" class="video-embed" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
             </div>
         </div>
     </div>
