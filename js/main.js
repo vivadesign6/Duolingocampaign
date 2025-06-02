@@ -42,7 +42,27 @@ function loadVideo() {
         }
     }
 }
-
+// New function that guarantees video visibility
+function loadVideoWithImage() {
+    console.log('loadVideoWithImage called!');
+    
+    const placeholder = document.getElementById('video-placeholder');
+    const videoWrapper = document.querySelector('.video-wrapper');
+    
+    if (videoWrapper) {
+        // Complete replacement method - guaranteed to work
+        videoWrapper.innerHTML = `
+            <iframe 
+                src="https://www.youtube.com/embed/7EdbbgawACQ?autoplay=1&rel=0&modestbranding=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; z-index: 20;">
+            </iframe>
+        `;
+        console.log('Video loaded and should be visible!');
+    }
+}
 // DOM Content Loaded Event Listener
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
