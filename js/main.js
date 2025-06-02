@@ -13,26 +13,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Video player functionality
-    const videoPlaceholder = document.querySelector('.video-placeholder');
-    const playButton = document.querySelector('.play-button');
-    
-    if (videoPlaceholder && playButton) {
-        playButton.addEventListener('click', function() {
-            // Replace placeholder with actual video embed
-            videoPlaceholder.innerHTML = `
-                <div class="video-embed">
-                    <iframe width="100%" height="100%" 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                        title="Duolingo Magic Carpet Journey" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            `;
-        });
+// Video functionality for Magic Carpet video
+let videoLoaded = false;
+
+function loadVideo() {
+    if (!videoLoaded) {
+        const videoId = '7EdbbgawACQ'; // Your specific video ID
+        const iframe = document.getElementById('video-iframe');
+        const placeholder = document.getElementById('video-placeholder');
+        
+        if (iframe && placeholder) {
+            // Add fade-out effect
+            placeholder.style.transition = 'opacity 0.3s ease';
+            placeholder.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Set the YouTube embed URL with autoplay
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                
+                // Hide placeholder and show video
+                placeholder.style.display = 'none';
+                iframe.style.display = 'block';
+                iframe.style.opacity = '0';
+                iframe.style.transition = 'opacity 0.3s ease';
+                
+                // Fade in the video
+                setTimeout(() => {
+                    iframe.style.opacity = '1';
+                }, 100);
+                
+            }, 300);
+            
+            videoLoaded = true;
+        }
     }
+}
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
