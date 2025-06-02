@@ -288,7 +288,7 @@
 .video-text-overlay h2 {
     display: none; /* Hide since image already has text */
 }
-/* Video placeholder with Magic Carpet background */
+/* Video placeholder with Magic Carpet background - WORKING VERSION */
 .video-placeholder {
     position: absolute;
     top: 0;
@@ -307,23 +307,17 @@
     border-radius: var(--radius-lg);
 }
 
-/* Optional: Add subtle overlay for better play button visibility */
-.video-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-wrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     border-radius: var(--radius-lg);
-    z-index: 1;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
-/* Play button styling */
 .play-button {
-    position: relative;
-    z-index: 2;
     background: rgba(0, 0, 0, 0.8);
     border: none;
     border-radius: 50%;
