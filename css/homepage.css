@@ -1,14 +1,18 @@
-/* Additional styles for new homepage sections */
+/* Updated homepage.css with fixed hero section */
 
-/* Gradient Hero Section with Animation */
+/* ========== GRADIENT HERO SECTION ========== */
 .gradient-hero {
     background: linear-gradient(135deg, #1cb0f6 0%, #58cc02 100%);
     padding: var(--space-3xl) 0;
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
 }
 
+/* Animated background blobs */
 .gradient-hero::before {
     content: '';
     position: absolute;
@@ -57,35 +61,125 @@
     }
 }
 
+/* Hero content layout */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
 .gradient-hero h1 {
     color: white;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
+    font-weight: 800;
 }
 
 .gradient-hero .highlight {
     color: #ffde00;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .gradient-hero p {
     font-size: var(--font-lg);
-    margin-bottom: 4rem;
-    max-width: 600px;
+    margin-bottom: 2rem;
+    max-width: 450px;
+    opacity: 0.95;
+    line-height: 1.6;
 }
 
-.gradient-hero {
-  position: relative;
-  padding: 6rem 0 3rem;   
-}
-
+/* Fixed button positioning */
 .gradient-hero .button {
-  position: absolute;
-  bottom: 6rem;          
-  left:   0rem;          
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    z-index: 3;
 }
 
-/* ========== VIDEO SECTION - COMPLETE CONTROL ========== */
+/* Hero image container with proper sizing */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image-container img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Enhanced floating animation */
+.floating {
+    animation: enhanced-floating 6s ease-in-out infinite;
+}
+
+@keyframes enhanced-floating {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-15px) scale(1.02);
+    }
+    50% {
+        transform: translateY(-10px) scale(1);
+    }
+    75% {
+        transform: translateY(-20px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Add magical sparkle effects */
+.hero-image-container::before {
+    content: '✨';
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    font-size: 1.5rem;
+    animation: sparkle 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.hero-image-container::after {
+    content: '⭐';
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+    font-size: 1.2rem;
+    animation: sparkle 4s ease-in-out infinite reverse;
+    z-index: 1;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* ========== VIDEO SECTION ========== */
 .video-section {
     padding: var(--space-3xl) 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -173,7 +267,7 @@
     display: none;
 }
 
-/* Testimonials Section */
+/* ========== TESTIMONIALS SECTION ========== */
 .testimonials-section {
     background-color: #f7f7f7;
     padding: var(--space-3xl) 0;
@@ -250,7 +344,7 @@
     font-size: var(--font-sm);
 }
 
-/* Learning Styles Section */
+/* ========== LEARNING STYLES SECTION ========== */
 .learning-styles-section {
     padding: var(--space-3xl) 0;
     text-align: center;
@@ -358,18 +452,33 @@
     color: var(--dark-gray);
 }
 
-/* Responsive adjustments */
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 768px) {
+    .gradient-hero {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-xl);
+    }
+    
+    .gradient-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-image-container img {
+        max-height: 300px;
+    }
+    
     .learning-styles-grid {
         grid-template-columns: 1fr;
     }
     
     .testimonials-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .gradient-hero h1 {
-        font-size: 2.5rem;
     }
     
     .play-button {
@@ -384,6 +493,14 @@
 }
 
 @media (max-width: 480px) {
+    .gradient-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-image-container img {
+        max-height: 250px;
+    }
+    
     .author-avatar {
         width: 40px;
         height: 40px;
