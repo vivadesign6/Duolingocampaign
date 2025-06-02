@@ -16,156 +16,15 @@
     
     <link rel="canonical" href="https://your-github-pages-url/">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Additional styles for the new sections */
-        .gradient-hero {
-            background: linear-gradient(to right, #1cb0f6, #58cc02);
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .gradient-hero h1 {
-            color: white;
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .gradient-hero .highlight {
-            color: #ffde00;
-        }
-        
-        .hero-image-container {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .testimonials-section {
-            background-color: #f7f7f7;
-            padding: var(--space-3xl) 0;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            margin-bottom: var(--space-xl);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: var(--space-lg);
-            font-size: var(--font-lg);
-            line-height: 1.6;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: var(--space-md);
-            overflow: hidden;
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 0.25rem;
-        }
-        
-        .author-info p {
-            margin-bottom: 0;
-            color: var(--dark-gray);
-        }
-        
-        .learning-styles-section {
-            padding: var(--space-3xl) 0;
-            text-align: center;
-        }
-        
-        .learning-styles-section h2 {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .learning-styles-section p {
-            max-width: 800px;
-            margin: 0 auto var(--space-2xl) auto;
-            font-size: var(--font-lg);
-        }
-        
-        .learning-styles-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-xl);
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .learning-style-card {
-            background-color: white;
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .style-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: var(--space-md);
-        }
-        
-        .learning-style-card h3 {
-            margin-bottom: var(--space-md);
-        }
-        
-        .learning-style-card p {
-            margin-bottom: var(--space-lg);
-            font-size: var(--font-base);
-        }
-        
-        .style-illustration {
-            width: 100%;
-            height: 200px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            margin-top: auto;
-        }
-        
-        .style-illustration img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        @media (max-width: 768px) {
-            .learning-styles-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gradient-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -197,14 +56,14 @@
     </header>
 
     <main class="main-content">
-        <!-- Animated Gradient Hero Section (like the Netlify example) -->
+        <!-- Animated Gradient Hero Section -->
         <section class="gradient-hero">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Fly Far. Learn Fast.<br><span class="highlight">With Duolingo!</span></h1>
                         <p>Children aged 5-11 learn languages 45% faster than adults. Transform your child's summer with the Duolingo Magic Carpet Journey.</p>
-                        <a href="signup.html" class="button primary-cta">Start Your Magic Carpet Journey</a>
+                        <a href="signup.html" class="button yellow-cta">Start Your Magic Carpet Journey</a>
                     </div>
                     <div class="hero-image-container">
                         <img src="images/duo-carpet.png" alt="Duolingo Owl on Magic Carpet" class="floating">
@@ -213,23 +72,24 @@
             </div>
         </section>
 
-<section class="video-section">
-    <div class="container">
-        <div class="video-container">
-            <div class="video-wrapper">
-                <div class="video-placeholder" id="video-placeholder" onclick="loadVideoWithImage()">
-                    <button class="play-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder" id="video-placeholder" onclick="loadVideoWithImage()">
+                            <button class="play-button" type="button" aria-label="Play video">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-        <!-- New Learning Styles Section -->
+        <!-- Learning Styles Section -->
         <section class="learning-styles-section">
             <div class="container">
                 <h2>Personalized Learning Styles</h2>
@@ -274,6 +134,7 @@
             </div>
         </section>
 
+        <!-- Features Section -->
         <section class="features-section">
             <div class="container">
                 <h2 class="section-title">The Magic of Adaptive Learning</h2>
@@ -322,7 +183,7 @@
             </div>
         </section>
         
-        <!-- New Testimonials Section -->
+        <!-- Testimonials Section -->
         <section class="testimonials-section">
             <div class="container">
                 <h2 class="section-title">What Parents & Children Say</h2>
@@ -376,6 +237,7 @@
             </div>
         </section>
 
+        <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -474,6 +336,7 @@
         </div>
     </div>
 
+    <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/gdpr.js"></script>
 </body>
