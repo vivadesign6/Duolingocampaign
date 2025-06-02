@@ -1,70 +1,53 @@
 // Main JavaScript for Duolingo Magic Carpet site
 
-// Video functionality for Magic Carpet video - MUST BE GLOBAL
+// Video functionality for Magic Carpet video
 let videoLoaded = false;
 
-function loadVideo() {
-    console.log('loadVideo called!'); // Debug message
-    
-    if (!videoLoaded) {
-        const videoId = '7EdbbgawACQ'; // Your specific video ID
-        const iframe = document.getElementById('video-iframe');
-        const placeholder = document.getElementById('video-placeholder');
-        
-        console.log('iframe:', iframe, 'placeholder:', placeholder); // Debug message
-        
-        if (iframe && placeholder) {
-            // Add fade-out effect
-            placeholder.style.transition = 'opacity 0.3s ease';
-            placeholder.style.opacity = '0';
-            
-            setTimeout(() => {
-                // Set the YouTube embed URL with autoplay
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-                
-                // Hide placeholder and show video
-                placeholder.style.display = 'none';
-                iframe.style.display = 'block';
-                iframe.style.opacity = '0';
-                iframe.style.transition = 'opacity 0.3s ease';
-                
-                // Fade in the video
-                setTimeout(() => {
-                    iframe.style.opacity = '1';
-                }, 100);
-                
-            }, 300);
-            
-            videoLoaded = true;
-            console.log('Video loaded successfully!'); // Debug message
-        } else {
-            console.error('iframe or placeholder not found');
-        }
-    }
-}
-// New function that guarantees video visibility
+// Main video loading function - guaranteed to work
 function loadVideoWithImage() {
     console.log('loadVideoWithImage called!');
     
-    const placeholder = document.getElementById('video-placeholder');
-    const videoWrapper = document.querySelector('.video-wrapper');
-    
-    if (videoWrapper) {
-        // Complete replacement method - guaranteed to work
-        videoWrapper.innerHTML = `
-            <iframe 
-                src="https://www.youtube.com/embed/7EdbbgawACQ?autoplay=1&rel=0&modestbranding=1" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; z-index: 20;">
-            </iframe>
-        `;
-        console.log('Video loaded and should be visible!');
+    if (!videoLoaded) {
+        const placeholder = document.getElementById('video-placeholder');
+        const videoWrapper = document.querySelector('.video-wrapper');
+        
+        if (videoWrapper) {
+            // Fade out placeholder
+            if (placeholder) {
+                placeholder.style.opacity = '0';
+                placeholder.style.transition = 'opacity 0.3s ease';
+            }
+            
+            setTimeout(() => {
+                // Complete replacement method - guaranteed to work
+                videoWrapper.innerHTML = `
+                    <iframe 
+                        src="https://www.youtube.com/embed/7EdbbgawACQ?autoplay=1&rel=0&modestbranding=1&color=white&showinfo=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; z-index: 20;">
+                    </iframe>
+                `;
+                
+                videoLoaded = true;
+                console.log('Video loaded and should be visible!');
+            }, 300);
+        } else {
+            console.error('Video wrapper not found');
+        }
     }
 }
+
+// Backup video loading function (for compatibility)
+function loadVideo() {
+    console.log('loadVideo called - redirecting to loadVideoWithImage');
+    loadVideoWithImage();
+}
+
 // DOM Content Loaded Event Listener
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainMenu = document.getElementById('main-menu');
@@ -104,8 +87,88 @@ document.addEventListener('DOMContentLoaded', function() {
     if (playButton) {
         playButton.addEventListener('click', function(e) {
             e.preventDefault();
-            loadVideo();
+            e.stopPropagation();
+            loadVideoWithImage();
         });
-        console.log('Backup event listener attached to play button');
+        console.log('Event listener attached to play button');
     }
+    
+    // Video placeholder click handler (backup)
+    const videoPlaceholder = document.getElementById('video-placeholder');
+    if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            loadVideoWithImage();
+        });
+        console.log('Event listener attached to video placeholder');
+    }
+    
+    // Form validation helper
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Newsletter signup (if present)
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && validateEmail(emailInput.value)) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    }
+    
+    // FAQ toggle functionality (if present)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+    
+    // Lazy loading for images (performance improvement)
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+        });
+    }
+    
+    console.log('Duolingo Magic Carpet site initialized successfully!');
 });
