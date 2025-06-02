@@ -1,26 +1,17 @@
 // Main JavaScript for Duolingo Magic Carpet site
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainMenu = document.getElementById('main-menu');
-    
-    if (mobileMenuToggle && mainMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            mainMenu.classList.toggle('active');
-        });
-    }
-    
-// Video functionality for Magic Carpet video
+// Video functionality for Magic Carpet video - MUST BE GLOBAL
 let videoLoaded = false;
 
 function loadVideo() {
+    console.log('loadVideo called!'); // Debug message
+    
     if (!videoLoaded) {
         const videoId = '7EdbbgawACQ'; // Your specific video ID
         const iframe = document.getElementById('video-iframe');
         const placeholder = document.getElementById('video-placeholder');
+        
+        console.log('iframe:', iframe, 'placeholder:', placeholder); // Debug message
         
         if (iframe && placeholder) {
             // Add fade-out effect
@@ -45,9 +36,26 @@ function loadVideo() {
             }, 300);
             
             videoLoaded = true;
+            console.log('Video loaded successfully!'); // Debug message
+        } else {
+            console.error('iframe or placeholder not found');
         }
     }
 }
+
+// DOM Content Loaded Event Listener
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
+    
+    if (mobileMenuToggle && mainMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            mainMenu.classList.toggle('active');
+        });
+    }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -70,4 +78,14 @@ function loadVideo() {
             }
         });
     });
+    
+    // Additional backup event listener for video play button
+    const playButton = document.querySelector('.play-button');
+    if (playButton) {
+        playButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            loadVideo();
+        });
+        console.log('Backup event listener attached to play button');
+    }
 });
