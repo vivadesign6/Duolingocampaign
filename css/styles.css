@@ -399,18 +399,11 @@ header {
 }
 
 .video-text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: var(--space-lg);
-    z-index: 1;
+    display: none; /* Hide since image already has text */
 }
 
 .video-text-overlay h2 {
-    color: var(--white);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Hide since image already has text */
 }
 
 .video-wrapper {
