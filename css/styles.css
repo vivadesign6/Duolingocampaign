@@ -447,6 +447,27 @@ header {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* ========== VIDEO SECTION ========== */
+.video-section {
+    padding: var(--space-3xl) 0;
+}
+
+.video-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Remove these conflicting styles - let homepage.css handle them */
+.video-text-overlay {
+    display: none; /* Hide since image already has text */
+}
+
+.video-text-overlay h2 {
+    display: none; /* Hide since image already has text */
+}
+
+/* Keep basic video-embed styles */
 .video-embed {
     position: absolute;
     top: 0;
