@@ -276,13 +276,7 @@
 }
 
 .video-text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: var(--space-xl);
-    z-index: 10;
-    text-align: center;
+    display: none; /* Hide since image already has text */
 }
 
 .video-text-overlay h2 {
@@ -291,11 +285,8 @@
     margin: 0;
 }
 
-.video-wrapper {
-    margin-top: 0;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
+.video-text-overlay h2 {
+    display: none; /* Hide since image already has text */
 }
 /* Video placeholder with Magic Carpet background */
 .video-placeholder {
@@ -304,7 +295,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/video-thumb.jpg');
+    background-image: url('../images/video-thumb.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
