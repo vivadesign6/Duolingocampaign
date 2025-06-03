@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Your Magic Carpet | Duolingo Language Learning Adventure</title>
-    <meta name="description" content="Create your unique Magic Carpet design reflecting your language learning journey. Unlock premium patterns with Super Duolingo.">
-    <meta name="keywords" content="customize magic carpet, Duolingo premium features, language learning designs, personalized learning journey, interactive language tool">
+    <title>Magic Carpet Language Journey | Duolingo Language Learning Adventure</title>
+    <meta name="description" content="Track your language learning progress with our interactive Magic Carpet. Watch your carpet become clearer as you master French, Spanish, German, and Italian.">
+    <meta name="keywords" content="magic carpet language learning, Duolingo progress tracker, language proficiency visualization, interactive learning journey">
     
     <link rel="canonical" href="https://your-github-pages-url/customizer.html">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -14,6 +14,533 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Enhanced Magic Carpet Language Learning Styles */
+        .magic-carpet-hero {
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, #1cb0f6 0%, #58cc02 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .magic-carpet-hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 60%;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float-blob 8s ease-in-out infinite;
+        }
+
+        .magic-carpet-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -10%;
+            width: 50%;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: float-blob-reverse 10s ease-in-out infinite;
+        }
+
+        @keyframes float-blob {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes float-blob-reverse {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(30px) rotate(-10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .magic-carpet-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: var(--space-lg);
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .magic-carpet-hero p {
+            color: white;
+            font-size: var(--font-lg);
+            margin-bottom: 0;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .carpet-learning-section {
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+        }
+
+        .carpet-main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            background: white;
+            border-radius: 20px;
+            padding: var(--space-2xl);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Left Side - Carpet Preview */
+        .carpet-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carpet-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin-bottom: var(--space-lg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+
+        .carpet-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .carpet-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.8s ease;
+        }
+
+        .clarity-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            transition: all 0.8s ease;
+            pointer-events: none;
+        }
+
+        /* Proficiency levels */
+        .beginner .clarity-overlay { 
+            opacity: 0.8; 
+            backdrop-filter: blur(15px); 
+        }
+        .elementary .clarity-overlay { 
+            opacity: 0.6; 
+            backdrop-filter: blur(10px); 
+        }
+        .intermediate .clarity-overlay { 
+            opacity: 0.3; 
+            backdrop-filter: blur(5px); 
+        }
+        .advanced .clarity-overlay { 
+            opacity: 0.1; 
+            backdrop-filter: blur(2px); 
+        }
+        .fluent .clarity-overlay { 
+            opacity: 0; 
+            backdrop-filter: blur(0px); 
+        }
+
+        .mastery-circles {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #58cc02;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            width: 100%;
+            margin-bottom: var(--space-lg);
+        }
+
+        .stat-item {
+            text-align: center;
+            background: #f8f9fa;
+            padding: var(--space-md);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: #e3f2fd;
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1cb0f6;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .proficiency-info {
+            background: linear-gradient(135deg, #ffc800, #ff9600);
+            color: white;
+            padding: var(--space-lg);
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proficiency-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .proficiency-level {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .proficiency-progress {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: var(--space-md);
+            width: 100%;
+        }
+
+        .btn {
+            flex: 1;
+            padding: var(--space-md);
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: var(--font-base);
+        }
+
+        .btn-primary {
+            background: #1cb0f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(28, 176, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: #58cc02;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4ade80;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(88, 204, 2, 0.4);
+        }
+
+        /* Right Side - Language Selection */
+        .language-selection h2 {
+            color: #1cb0f6;
+            margin-bottom: var(--space-lg);
+            font-size: 1.8rem;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .language-option {
+            background: #f8f9fa;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            padding: var(--space-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .language-option.active {
+            border-color: #1cb0f6;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+
+        .language-option.active::after {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #58cc02;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            animation: checkmark 0.5s ease;
+        }
+
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .language-flag {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .clarity-section h3 {
+            color: #1cb0f6;
+            margin-bottom: var(--space-md);
+            font-size: 1.4rem;
+        }
+
+        .clarity-levels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-lg);
+            background: #f8f9fa;
+            padding: var(--space-md);
+            border-radius: 12px;
+        }
+
+        .clarity-level {
+            text-align: center;
+            flex: 1;
+            padding: 10px 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .clarity-level.active {
+            background: #1cb0f6;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .clarity-level.unlocked {
+            background: #58cc02;
+            color: white;
+        }
+
+        .clarity-level.locked {
+            background: #e0e0e0;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        .level-name {
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .level-percent {
+            font-size: 0.7rem;
+        }
+
+        .progress-section {
+            background: linear-gradient(135deg, #58cc02, #4ade80);
+            color: white;
+            padding: var(--space-lg);
+            border-radius: 15px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.3);
+            height: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: white;
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+            animation: progressGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes progressGlow {
+            0% { box-shadow: 0 0 5px rgba(255,255,255,0.5); }
+            100% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+        }
+
+        .achievements {
+            background: #fff3e0;
+            padding: var(--space-lg);
+            border-radius: 15px;
+            border-left: 5px solid #ffc800;
+        }
+
+        .achievements h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        .achievement-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .achievement-badge {
+            background: #ffc800;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .carpet-main-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+                padding: var(--space-lg);
+            }
+            
+            .carpet-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .magic-carpet-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .magic-carpet-hero {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carpet-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,112 +569,128 @@
                 </div>
             </div>
         </nav>
-        <link rel="stylesheet" href="css/headers.css">
     </header>
 
-    <section class="customizer-hero wide-hero" style="background-image: url('images/customizer-header.jpg');">
-    <div class="container">
-        <h1>Design Your Magic Carpet</h1>
-        <p>Customize your child's Magic Carpet to reflect their unique language learning journey</p>
-    </div>
-</section>
-
-        <section class="customizer-section">
+    <main class="main-content">
+        <section class="magic-carpet-hero">
             <div class="container">
-                <div class="customizer-grid">
-                    <div class="customizer-preview">
-                        <div id="carpet-preview" class="carpet-preview">
-                            <div class="carpet-base"></div>
-                            <div class="carpet-overlay"></div>
-                            <div class="carpet-mastered">
-                                <div class="mastered-area mastered-area-1"></div>
-                                <div class="mastered-area mastered-area-2"></div>
-                                <div class="mastered-area mastered-area-3"></div>
-                            </div>
-                            <div class="carpet-character"></div>
-                        </div>
-                        
-                        <div class="carpet-stats">
-                            <div class="stat">
-                                <div class="stat-value">12</div>
-                                <div class="stat-label">Days Streak</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">324</div>
-                                <div class="stat-label">Gems Earned</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">Silver</div>
-                                <div class="stat-label">Current League</div>
+                <h1>🧞‍♂️ Magic Carpet Journey</h1>
+                <p>Watch your carpet become clearer as you master new languages!</p>
+            </div>
+        </section>
+
+        <section class="carpet-learning-section">
+            <div class="container">
+                <div class="carpet-main-content">
+                    <!-- Left Side - Carpet Preview -->
+                    <div class="carpet-preview">
+                        <div class="carpet-container intermediate" id="carpetContainer">
+                            <img src="images/french-carpet.jpg" alt="Language Learning Carpet" class="carpet-image" id="carpetImage">
+                            <div class="clarity-overlay" id="clarityOverlay"></div>
+                            <div class="mastery-circles">
+                                <div class="circle" id="streakCircle">12</div>
+                                <div class="circle" id="lessonsCircle">47</div>
+                                <div class="circle">⭐</div>
                             </div>
                         </div>
-                        
-                        <div class="carpet-actions">
-                            <button id="download-carpet" class="button outline-cta">Download Your Carpet</button>
-                            <button id="share-carpet" class="button outline-cta">Share on Social</button>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" id="wordsLearned">847</div>
+                                <div class="stat-label">Words Learned</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="lessonsCompleted">45</div>
+                                <div class="stat-label">Lessons</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="fluencyPercent">67%</div>
+                                <div class="stat-label">Fluency</div>
+                            </div>
+                        </div>
+
+                        <div class="proficiency-info">
+                            <div class="proficiency-level" id="proficiencyLevel">Intermediate French</div>
+                            <div class="proficiency-progress" id="proficiencyProgress">15 more lessons to unlock Advanced clarity</div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary" onclick="continueLearning()">Continue Learning</button>
+                            <button class="btn btn-secondary" onclick="shareProgress()">Share Progress</button>
                         </div>
                     </div>
-                    
-                    <div class="customizer-options">
-                        <h2>Select a Pattern</h2>
-                        <div class="pattern-grid">
-                            <div class="pattern-option" onclick="selectPattern('geometric'); updateCarpetPreview();" data-pattern="geometric">
-                                <div class="pattern-preview pattern-geometric"></div>
-                                <span>Geometric</span>
-                            </div>
-                            <div class="pattern-option" onclick="selectPattern('floral'); updateCarpetPreview();" data-pattern="floral">
-                                <div class="pattern-preview pattern-floral"></div>
-                                <span>Floral</span>
-                            </div>
-                            <div class="pattern-option" onclick="selectPattern('animals'); updateCarpetPreview();" data-pattern="animals">
-                                <div class="pattern-preview pattern-animals"></div>
-                                <span>Animals</span>
-                            </div>
-                            <div class="pattern-option" onclick="selectPattern('cultural'); updateCarpetPreview();" data-pattern="cultural">
-                                <div class="pattern-preview pattern-cultural"></div>
-                                <span>Cultural</span>
-                            </div>
-                        </div>
+
+                    <!-- Right Side - Language Selection -->
+                    <div class="language-selection">
+                        <h2>🌍 Choose Your Language Path</h2>
                         
-                        <h2>Choose a Color</h2>
-                        <div class="color-options">
-                            <button class="color-option color-blue" onclick="selectColor('#1cb0f6'); updateCarpetPreview();" data-color="#1cb0f6"></button>
-                            <button class="color-option color-purple" onclick="selectColor('#ce82ff'); updateCarpetPreview();" data-color="#ce82ff"></button>
-                            <button class="color-option color-gold" onclick="selectColor('#ffc800'); updateCarpetPreview();" data-color="#ffc800"></button>
-                            <button class="color-option color-green" onclick="selectColor('#58cc02'); updateCarpetPreview();" data-color="#58cc02"></button>
-                            <button class="color-option color-indigo" onclick="selectColor('#5c4dff'); updateCarpetPreview();" data-color="#5c4dff"></button>
-                            <button class="color-option color-orange" onclick="selectColor('#ff9600'); updateCarpetPreview();" data-color="#ff9600"></button>
-                        </div>
-                        
-                        <div class="premium-patterns">
-                            <h3>Premium Patterns</h3>
-                            <p>Unlock exclusive patterns and designs with Super Duolingo</p>
-                            <div class="premium-pattern-grid">
-                                <div class="premium-pattern premium-locked">
-                                    <div class="pattern-preview premium-pattern-1"></div>
-                                    <div class="lock-icon">🔒</div>
-                                </div>
-                                <div class="premium-pattern premium-locked">
-                                    <div class="pattern-preview premium-pattern-2"></div>
-                                    <div class="lock-icon">🔒</div>
-                                </div>
-                                <div class="premium-pattern premium-locked">
-                                    <div class="pattern-preview premium-pattern-3"></div>
-                                    <div class="lock-icon">🔒</div>
-                                </div>
+                        <div class="language-grid">
+                            <div class="language-option active" data-language="french" data-level="intermediate" onclick="selectLanguage('french')">
+                                <span class="language-flag">🇫🇷</span>
+                                <div class="language-name">French</div>
+                                <div class="language-level">Intermediate</div>
                             </div>
                             
-                            <div class="premium-benefits">
-                                <div class="benefit-item">
-                                    <span class="benefit-check">✓</span>
-                                    <span>Enhanced streaks and gem visualization</span>
+                            <div class="language-option" data-language="spanish" data-level="elementary" onclick="selectLanguage('spanish')">
+                                <span class="language-flag">🇪🇸</span>
+                                <div class="language-name">Spanish</div>
+                                <div class="language-level">Elementary</div>
+                            </div>
+                            
+                            <div class="language-option" data-language="german" data-level="beginner" onclick="selectLanguage('german')">
+                                <span class="language-flag">🇩🇪</span>
+                                <div class="language-name">German</div>
+                                <div class="language-level">Beginner</div>
+                            </div>
+                            
+                            <div class="language-option" data-language="italian" data-level="advanced" onclick="selectLanguage('italian')">
+                                <span class="language-flag">🇮🇹</span>
+                                <div class="language-name">Italian</div>
+                                <div class="language-level">Advanced</div>
+                            </div>
+                        </div>
+
+                        <div class="clarity-section">
+                            <h3>🔮 Carpet Clarity Levels</h3>
+                            <div class="clarity-levels" id="clarityLevels">
+                                <div class="clarity-level unlocked">
+                                    <div class="level-name">Beginner</div>
+                                    <div class="level-percent">10%</div>
                                 </div>
-                                <div class="benefit-item">
-                                    <span class="benefit-check">✓</span>
-                                    <span>Downloadable high-resolution image</span>
+                                <div class="clarity-level unlocked">
+                                    <div class="level-name">Elementary</div>
+                                    <div class="level-percent">30%</div>
                                 </div>
-                                
-                                <a href="signup.html" class="button primary-cta full-width">Start Free Trial</a>
+                                <div class="clarity-level active">
+                                    <div class="level-name">Intermediate</div>
+                                    <div class="level-percent">60%</div>
+                                </div>
+                                <div class="clarity-level locked">
+                                    <div class="level-name">Advanced</div>
+                                    <div class="level-percent">85%</div>
+                                </div>
+                                <div class="clarity-level locked">
+                                    <div class="level-name">Fluent</div>
+                                    <div class="level-percent">100%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="progress-section">
+                            <h4>🎯 Next Milestone</h4>
+                            <p id="nextMilestone">Progress to Advanced Level</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 67%"></div>
+                            </div>
+                            <p id="progressText">67% Complete • 15 lessons remaining</p>
+                        </div>
+
+                        <div class="achievements">
+                            <h4>🏆 Recent Achievements</h4>
+                            <div class="achievement-list" id="achievementList">
+                                <span class="achievement-badge">Week Streak</span>
+                                <span class="achievement-badge">Grammar Master</span>
+                                <span class="achievement-badge">Pronunciation Pro</span>
                             </div>
                         </div>
                     </div>
@@ -242,5 +785,254 @@
     <script src="js/main.js"></script>
     <script src="js/customizer.js"></script>
     <script src="js/gdpr.js"></script>
+    
+    <script>
+        // Enhanced Magic Carpet Language Learning JavaScript
+        
+        // Language data with different stats and levels
+        const languageData = {
+            french: {
+                words: 847,
+                lessons: 45,
+                fluency: 67,
+                level: 'intermediate',
+                proficiency: 'Intermediate French',
+                progress: '15 more lessons to unlock Advanced clarity',
+                image: 'images/french-carpet.jpg',
+                achievements: ['Week Streak', 'Grammar Master', 'Pronunciation Pro'],
+                nextMilestone: 'Progress to Advanced Level',
+                progressText: '67% Complete • 15 lessons remaining',
+                streak: 12,
+                lessonsToday: 3
+            },
+            spanish: {
+                words: 542,
+                lessons: 28,
+                fluency: 35,
+                level: 'elementary',
+                proficiency: 'Elementary Spanish',
+                progress: '22 more lessons to unlock Intermediate clarity',
+                image: 'images/spanish-carpet.jpg',
+                achievements: ['First Week', 'Vocabulary Builder', 'Daily Learner'],
+                nextMilestone: 'Progress to Intermediate Level',
+                progressText: '35% Complete • 22 lessons remaining',
+                streak: 7,
+                lessonsToday: 2
+            },
+            german: {
+                words: 187,
+                lessons: 12,
+                fluency: 15,
+                level: 'beginner',
+                proficiency: 'Beginner German',
+                progress: '38 more lessons to unlock Elementary clarity',
+                image: 'images/german-carpet.jpg',
+                achievements: ['Getting Started', 'First Lesson'],
+                nextMilestone: 'Progress to Elementary Level',
+                progressText: '15% Complete • 38 lessons remaining',
+                streak: 3,
+                lessonsToday: 1
+            },
+            italian: {
+                words: 1240,
+                lessons: 78,
+                fluency: 85,
+                level: 'advanced',
+                proficiency: 'Advanced Italian',
+                progress: '10 more lessons to unlock Fluent clarity',
+                image: 'images/italian-carpet.jpg',
+                achievements: ['Month Streak', 'Conversation Master', 'Culture Expert', 'Advanced Grammar'],
+                nextMilestone: 'Progress to Fluent Level',
+                progressText: '85% Complete • 10 lessons remaining',
+                streak: 28,
+                lessonsToday: 5
+            }
+        };
+
+        let currentLanguage = 'french';
+
+        // Elements
+        const carpetContainer = document.getElementById('carpetContainer');
+        const carpetImage = document.getElementById('carpetImage');
+        const wordsLearned = document.getElementById('wordsLearned');
+        const lessonsCompleted = document.getElementById('lessonsCompleted');
+        const fluencyPercent = document.getElementById('fluencyPercent');
+        const proficiencyLevel = document.getElementById('proficiencyLevel');
+        const proficiencyProgress = document.getElementById('proficiencyProgress');
+        const progressFill = document.getElementById('progressFill');
+        const nextMilestone = document.getElementById('nextMilestone');
+        const progressText = document.getElementById('progressText');
+        const achievementList = document.getElementById('achievementList');
+        const streakCircle = document.getElementById('streakCircle');
+        const lessonsCircle = document.getElementById('lessonsCircle');
+
+        // Language selection function
+        function selectLanguage(language) {
+            // Remove active class from all options
+            document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
+            
+            // Add active class to selected option
+            document.querySelector(`[data-language="${language}"]`).classList.add('active');
+            
+            // Update current language
+            currentLanguage = language;
+            
+            // Get language data
+            const data = languageData[language];
+            
+            // Update carpet clarity based on level
+            carpetContainer.className = `carpet-container ${data.level}`;
+            
+            // Update carpet image with fade effect
+            carpetImage.style.opacity = '0.5';
+            setTimeout(() => {
+                carpetImage.src = data.image;
+                carpetImage.style.opacity = '1';
+            }, 300);
+            
+            // Animate stats change
+            animateStatChange(wordsLearned, data.words);
+            animateStatChange(lessonsCompleted, data.lessons);
+            animateStatChange(fluencyPercent, data.fluency, '%');
+            
+            // Update proficiency info
+            proficiencyLevel.textContent = data.proficiency;
+            proficiencyProgress.textContent = data.progress;
+            
+            // Update progress section
+            progressFill.style.width = data.fluency + '%';
+            nextMilestone.textContent = data.nextMilestone;
+            progressText.textContent = data.progressText;
+            
+            // Update mastery circles
+            streakCircle.textContent = data.streak;
+            lessonsCircle.textContent = data.lessonsToday;
+            
+            // Update achievements
+            updateAchievements(data.achievements);
+            
+            // Update clarity levels
+            updateClarityLevels(data.level);
+            
+            // Add selection animation
+            carpetContainer.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                carpetContainer.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        // Animate stat changes
+        function animateStatChange(element, targetValue, suffix = '') {
+            const startValue = parseInt(element.textContent) || 0;
+            const duration = 1000;
+            const startTime = performance.now();
+            
+            function animate(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const currentValue = Math.floor(startValue + (targetValue - startValue) * progress);
+                element.textContent = currentValue + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Update achievements
+        function updateAchievements(achievements) {
+            achievementList.innerHTML = '';
+            
+            achievements.forEach((achievement, index) => {
+                const badge = document.createElement('span');
+                badge.className = 'achievement-badge';
+                badge.textContent = achievement;
+                badge.style.animationDelay = `${index * 0.1}s`;
+                achievementList.appendChild(badge);
+            });
+        }
+
+        // Update clarity levels
+        function updateClarityLevels(currentLevel) {
+            const levels = ['beginner', 'elementary', 'intermediate', 'advanced', 'fluent'];
+            const currentIndex = levels.indexOf(currentLevel);
+            const clarityLevelElements = document.querySelectorAll('.clarity-level');
+            
+            clarityLevelElements.forEach((element, index) => {
+                element.classList.remove('active', 'unlocked', 'locked');
+                
+                if (index < currentIndex) {
+                    element.classList.add('unlocked');
+                } else if (index === currentIndex) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.add('locked');
+                }
+            });
+        }
+
+        // Button functions
+        function continueLearning() {
+            const data = languageData[currentLanguage];
+            alert(`Continue learning ${data.proficiency.split(' ')[1]}! Let's unlock the next level of your Magic Carpet.`);
+        }
+
+        function shareProgress() {
+            const data = languageData[currentLanguage];
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Duolingo Magic Carpet Progress',
+                    text: `I'm ${data.fluency}% fluent in ${data.proficiency.split(' ')[1]} with my Magic Carpet! 🧞‍♂️`,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers without Web Share API
+                const shareText = `I'm ${data.fluency}% fluent in ${data.proficiency.split(' ')[1]} with my Duolingo Magic Carpet! 🧞‍♂️`;
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(shareText + ' ' + window.location.href);
+                    alert('Progress copied to clipboard!');
+                } else {
+                    alert(shareText);
+                }
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language (French is already active)
+            selectLanguage('french');
+            
+            // Add hover effects to language options
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(-5px) scale(1.02)';
+                    }
+                });
+                
+                option.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+            
+            // Add sparkle effects to achievements
+            setInterval(() => {
+                const badges = document.querySelectorAll('.achievement-badge');
+                badges.forEach((badge, index) => {
+                    setTimeout(() => {
+                        badge.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            badge.style.transform = 'scale(1)';
+                        }, 200);
+                    }, index * 100);
+                });
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
