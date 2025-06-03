@@ -6,4 +6,4 @@
   to         = "https://lovely-bienenstitch-0bad3e.netlify.app/:splat"
   status     = 301
   force      = true
-  conditions = { Host = ["*.lovely-bienenstitch-0bad3e.netlify.app"] }
+  conditions = { Host = ["*--lovely-bienenstitch-0bad3e.netlify.app"] }
