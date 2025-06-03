@@ -487,55 +487,540 @@
 }
 
 /* Content positioning above background */
+/* ========== OPTIMIZED LANGUAGE CARD BACKGROUNDS ========== */
+/* Best approach: SVG patterns + cultural symbols + smooth animations */
+
+/* Base language option styling */
+.language-option {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
+}
+
+/* Subtle pattern overlay for texture */
+.language-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.language-option:hover::before {
+    opacity: 0.2;
+}
+
+/* Content positioning above background */
 .language-option > * {
     position: relative;
     z-index: 3;
 }
 
-/* ========== FRENCH - EIFFEL TOWER & CAFÉ PATTERN ========== */
+/* ========== FRENCH - EIFFEL TOWER, FLEUR-DE-LIS & CAFÉ CULTURE ========== */
 .language-option[data-language="french"] {
-    background: linear-gradient(135deg, #1cb0f6 0%, #0ea5e9 50%, #e3f2fd 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="french-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="40" fill="none"/><g fill="%23ffffff" opacity="0.1"><polygon points="20,5 22,15 18,15" transform="translate(0,0)"/><polygon points="20,5 22,15 18,15" transform="translate(0,20)"/><circle cx="10" cy="30" r="2"/><circle cx="30" cy="10" r="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23french-pattern)"/></svg>');
+    background: linear-gradient(135deg, #1cb0f6 0%, #0ea5e9 30%, #dc2626 70%, #e3f2fd 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="french-pattern" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="none"/><g fill="%23ffffff" opacity="0.12"><path d="M25,5 L27,25 L29,35 L21,35 L23,25 Z M20,35 L30,35 M20,40 L30,40"/><path d="M15,45 Q17,42 19,45 Q17,47 15,45" fill="%23ffffff"/><ellipse cx="35" cy="15" rx="6" ry="4"/><rect x="32" y="18" width="6" height="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23french-pattern)"/></svg>');
     color: white;
 }
 
 .language-option[data-language="french"]::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.3"><path d="M50,10 L52,40 L48,40 Z M45,40 L55,40 M45,50 L55,50 M45,60 L55,60"/><circle cx="25" cy="75" r="3"/><rect x="70" y="70" width="8" height="15" rx="1"/></g></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.25"><path d="M50,8 L52,35 L54,45 L46,45 L48,35 Z M42,45 L58,45 M42,50 L58,50 M42,55 L58,55 M45,60 L55,60"/><path d="M20,25 Q22,20 24,25 Q22,30 20,25 M22,25 L22,32 M20,32 L24,32"/><circle cx="75" cy="80" r="4"/><ellipse cx="75" cy="75" rx="8" ry="3"/><path d="M25,75 Q30,70 35,75 Q30,65 25,75" fill="none" stroke="%23ffffff" stroke-width="1.5"/><rect x="15" y="80" width="3" height="8"/><rect x="80" y="65" width="12" height="3" rx="1"/></g></svg>');
 }
 
-/* ========== SPANISH - FLAMENCO & ARCHITECTURE PATTERN ========== */
+/* ========== SPANISH - FLAMENCO, GUITARS, PAELLA & SPANISH TILES ========== */
 .language-option[data-language="spanish"] {
-    background: linear-gradient(135deg, #ff9600 0%, #e67e00 50%, #fff3e0 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="spanish-pattern" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="none"/><g fill="%23ffffff" opacity="0.15"><circle cx="25" cy="25" r="8" fill="none" stroke="%23ffffff" stroke-width="1"/><polygon points="25,10 30,20 20,20"/><rect x="15" y="35" width="20" height="8" rx="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23spanish-pattern)"/></svg>');
+    background: linear-gradient(135deg, #dc2626 0%, #ff9600 30%, #fbbf24 70%, #fff3e0 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="spanish-pattern" patternUnits="userSpaceOnUse" width="60" height="60"><rect width="60" height="60" fill="none"/><g fill="%23ffffff" opacity="0.15"><path d="M30,15 Q35,10 40,15 Q35,20 30,15"/><ellipse cx="15" cy="30" rx="12" ry="18"/><path d="M45,35 Q50,25 55,35 Q50,45 45,35" fill="none" stroke="%23ffffff" stroke-width="2"/><rect x="10" y="45" width="25" height="8" rx="4"/><circle cx="50" cy="50" r="8" fill="none" stroke="%23ffffff" stroke-width="1.5"/></g></pattern></defs><rect width="200" height="200" fill="url(%23spanish-pattern)"/></svg>');
     color: white;
 }
 
 .language-option[data-language="spanish"]::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.4"><path d="M30,70 Q40,50 50,70 Q60,50 70,70" stroke="%23ffffff" stroke-width="2" fill="none"/><polygon points="45,25 55,25 50,15"/><rect x="20" y="75" width="60" height="15" rx="3"/></g></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.3"><path d="M25,20 Q35,10 45,20 Q40,35 35,45 Q30,35 25,20" fill="%23ffffff"/><ellipse cx="65" cy="25" rx="15" ry="8"/><path d="M55,35 Q65,25 75,35 Q70,45 65,50 Q60,45 55,35" stroke="%23ffffff" stroke-width="2" fill="none"/><circle cx="30" cy="70" r="12" fill="none" stroke="%23ffffff" stroke-width="2"/><path d="M25,70 L35,70 M30,65 L30,75"/><rect x="60" y="65" width="25" height="15" rx="3"/><path d="M15,85 Q25,80 35,85 Q25,90 15,85"/></g></svg>');
 }
 
-/* ========== GERMAN - CASTLE & BAVARIAN PATTERN ========== */
+/* ========== GERMAN - CASTLES, PRETZELS, BEER STEINS & ALPINE ELEMENTS ========== */
 .language-option[data-language="german"] {
-    background: linear-gradient(135deg, #58cc02 0%, #4ade80 50%, #e8f5e8 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="german-pattern" patternUnits="userSpaceOnUse" width="45" height="45"><rect width="45" height="45" fill="none"/><g fill="%23ffffff" opacity="0.12"><rect x="15" y="15" width="15" height="20" rx="2"/><polygon points="22.5,10 27,20 18,20"/><circle cx="10" cy="35" r="2"/><circle cx="35" cy="10" r="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23german-pattern)"/></svg>');
+    background: linear-gradient(135deg, #000000 0%, #dc2626 30%, #fbbf24 70%, #e8f5e8 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="german-pattern" patternUnits="userSpaceOnUse" width="55" height="55"><rect width="55" height="55" fill="none"/><g fill="%23ffffff" opacity="0.12"><rect x="20" y="20" width="15" height="25" rx="2"/><polygon points="27.5,15 32,25 23,25"/><polygon points="27.5,10 30,15 25,15"/><path d="M10,40 Q15,35 20,40 Q15,45 10,40 Q12,42 18,42 Q15,45 10,40"/><ellipse cx="40" cy="15" rx="8" ry="5"/><rect x="37" y="18" width="6" height="8" rx="1"/></g></pattern></defs><rect width="200" height="200" fill="url(%23german-pattern)"/></svg>');
     color: white;
 }
 
 .language-option[data-language="german"]::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.3"><rect x="35" y="40" width="30" height="35" rx="2"/><polygon points="50,25 40,40 60,40"/><rect x="30" y="75" width="40" height="3"/><circle cx="20" cy="80" r="4"/><circle cx="80" cy="20" r="4"/></g></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.35"><rect x="35" y="35" width="30" height="40" rx="3"/><polygon points="50,20 40,35 60,35"/><polygon points="50,15 45,20 55,20"/><rect x="30" y="75" width="40" height="5"/><rect x="42" y="40" width="6" height="15"/><rect x="52" y="40" width="6" height="15"/><path d="M15,65 Q20,60 25,65 Q20,70 15,65 Q17,67 23,67 Q20,70 15,65"/><ellipse cx="75" cy="25" rx="12" ry="8"/><rect x="70" y="30" width="10" height="12" rx="2"/><path d="M20,20 L25,15 L30,20 L25,25 Z" fill="none" stroke="%23ffffff" stroke-width="1.5"/></g></svg>');
 }
 
-/* ========== ITALIAN - COLOSSEUM & RENAISSANCE PATTERN ========== */
+/* ========== ITALIAN - COLOSSEUM, PIZZA, GONDOLAS & RENAISSANCE ART ========== */
 .language-option[data-language="italian"] {
-    background: linear-gradient(135deg, #ce82ff 0%, #b366ff 50%, #f3e5f5 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="italian-pattern" patternUnits="userSpaceOnUse" width="60" height="60"><rect width="60" height="60" fill="none"/><g fill="%23ffffff" opacity="0.1"><ellipse cx="30" cy="30" rx="20" ry="25"/><rect x="15" y="45" width="30" height="8"/><rect x="20" y="35" width="20" height="3"/><rect x="20" y="25" width="20" height="3"/></g></pattern></defs><rect width="200" height="200" fill="url(%23italian-pattern)"/></svg>');
+    background: linear-gradient(135deg, #16a34a 0%, #ffffff 30%, #dc2626 70%, #f3e5f5 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="italian-pattern" patternUnits="userSpaceOnUse" width="70" height="70"><rect width="70" height="70" fill="none"/><g fill="%23ffffff" opacity="0.12"><ellipse cx="35" cy="35" rx="25" ry="30"/><rect x="15" y="50" width="40" height="6" rx="1"/><rect x="20" y="40" width="30" height="3"/><rect x="20" y="30" width="30" height="3"/><path d="M10,15 Q15,10 20,15 Q20,25 15,30 Q10,25 10,15"/><circle cx="55" cy="15" r="6"/><polygon points="55,8 58,14 52,14"/><path d="M50,60 Q55,55 60,60 Q65,65 60,70 Q55,65 50,60"/></g></pattern></defs><rect width="200" height="200" fill="url(%23italian-pattern)"/></svg>');
     color: white;
 }
 
 .language-option[data-language="italian"]::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.4"><ellipse cx="50" cy="50" rx="25" ry="30" fill="none" stroke="%23ffffff" stroke-width="2"/><rect x="35" y="65" width="30" height="8" rx="1"/><rect x="40" y="55" width="20" height="2"/><rect x="40" y="45" width="20" height="2"/><rect x="40" y="35" width="20" height="2"/></g></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.4"><ellipse cx="50" cy="45" rx="30" ry="35" fill="none" stroke="%23ffffff" stroke-width="2"/><rect x="25" y="60" width="50" height="8" rx="2"/><rect x="30" y="50" width="40" height="3"/><rect x="30" y="40" width="40" height="3"/><rect x="30" y="30" width="40" height="3"/><path d="M15,20 Q20,15 25,20 Q25,30 20,35 Q15,30 15,20"/><circle cx="75" cy="20" r="8"/><polygon points="75,12 78,18 72,18"/><rect x="72" y="22" width="6" height="15"/><path d="M20,75 Q25,70 30,75 Q35,80 30,85 Q25,80 20,75"/><circle cx="65" cy="75" r="8"/><path d="M60,70 Q65,68 70,70 Q68,75 65,78 Q62,75 60,70"/></g></svg>');
 }
 
+/* ========== ENHANCED CULTURAL HOVER EFFECTS ========== */
+.language-option:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* French cultural hover - adds Parisian elegance */
+.language-option[data-language="french"]:hover {
+    box-shadow: 0 15px 35px rgba(28, 176, 246, 0.4), 0 0 25px rgba(220, 38, 38, 0.2);
+    animation: french-shimmer 2s ease infinite alternate;
+}
+
+@keyframes french-shimmer {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(10deg) brightness(1.1); }
+}
+
+/* Spanish cultural hover - adds flamenco passion */
+.language-option[data-language="spanish"]:hover {
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4), 0 0 25px rgba(251, 191, 36, 0.3);
+    animation: spanish-passion 1.5s ease infinite alternate;
+}
+
+@keyframes spanish-passion {
+    0% { transform: translateY(-8px) scale(1.02) rotate(-0.5deg); }
+    100% { transform: translateY(-10px) scale(1.03) rotate(0.5deg); }
+}
+
+/* German cultural hover - adds Bavarian warmth */
+.language-option[data-language="german"]:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(220, 38, 38, 0.2), 0 0 35px rgba(251, 191, 36, 0.2);
+    animation: german-stability 2.5s ease infinite alternate;
+}
+
+@keyframes german-stability {
+    0% { filter: brightness(1) contrast(1); }
+    100% { filter: brightness(1.05) contrast(1.1); }
+}
+
+/* Italian cultural hover - adds Renaissance elegance */
+.language-option[data-language="italian"]:hover {
+    box-shadow: 0 15px 35px rgba(22, 163, 74, 0.3), 0 0 25px rgba(220, 38, 38, 0.3);
+    animation: italian-romance 2s ease infinite alternate;
+}
+
+@keyframes italian-romance {
+    0% { filter: saturate(1) brightness(1); }
+    100% { filter: saturate(1.2) brightness(1.08); }
+}
+
+/* ========== CULTURAL SOUND EFFECTS (Visual) ========== */
+/* Add cultural "sound wave" effects on hover */
+.language-option::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.language-option:hover::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}
+
+/* ========== REGIONAL FLAG STRIPE EFFECTS ========== */
+/* Add subtle flag color stripes that appear on active state */
+.language-option.active {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    animation: active-glow 2s infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+/* French tricolor stripe effect */
+.language-option[data-language="french"].active::before {
+    background: linear-gradient(45deg, 
+        #1cb0f6 0%, #1cb0f6 33%, 
+        rgba(255,255,255,0.9) 33%, rgba(255,255,255,0.9) 66%, 
+        #dc2626 66%, #dc2626 100%);
+    opacity: 0.2;
+    animation: french-wave 3s ease infinite;
+}
+
+@keyframes french-wave {
+    0%, 100% { transform: translateX(-10%) rotate(45deg); }
+    50% { transform: translateX(10%) rotate(45deg); }
+}
+
+/* Spanish flag stripe effect */
+.language-option[data-language="spanish"].active::before {
+    background: linear-gradient(45deg, 
+        #dc2626 0%, #dc2626 25%, 
+        #fbbf24 25%, #fbbf24 75%, 
+        #dc2626 75%, #dc2626 100%);
+    opacity: 0.2;
+    animation: spanish-wave 2.5s ease infinite;
+}
+
+@keyframes spanish-wave {
+    0%, 100% { transform: translateY(-10%) rotate(45deg); }
+    50% { transform: translateY(10%) rotate(45deg); }
+}
+
+/* German flag stripe effect */
+.language-option[data-language="german"].active::before {
+    background: linear-gradient(180deg, 
+        #000000 0%, #000000 33%, 
+        #dc2626 33%, #dc2626 66%, 
+        #fbbf24 66%, #fbbf24 100%);
+    opacity: 0.25;
+    animation: german-wave 3.5s ease infinite;
+}
+
+@keyframes german-wave {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(2deg); }
+}
+
+/* Italian flag stripe effect */
+.language-option[data-language="italian"].active::before {
+    background: linear-gradient(90deg, 
+        #16a34a 0%, #16a34a 33%, 
+        rgba(255,255,255,0.9) 33%, rgba(255,255,255,0.9) 66%, 
+        #dc2626 66%, #dc2626 100%);
+    opacity: 0.2;
+    animation: italian-wave 2.8s ease infinite;
+}
+
+@keyframes italian-wave {
+    0%, 100% { transform: translateX(-5%) scale(1); }
+    50% { transform: translateX(5%) scale(1.02); }
+}
+
+@keyframes active-glow {
+    0% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3); }
+    100% { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.5); }
+}
+
+/* ========== ENHANCED LANGUAGE FLAGS WITH CULTURAL ELEMENTS ========== */
+.language-flag {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Add cultural elements around flags */
+.language-option[data-language="french"] .language-flag::before {
+    content: '🥐';
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.language-option[data-language="french"]:hover .language-flag::before {
+    opacity: 1;
+    transform: rotate(15deg) scale(1.2);
+}
+
+.language-option[data-language="spanish"] .language-flag::before {
+    content: '🎸';
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.language-option[data-language="spanish"]:hover .language-flag::before {
+    opacity: 1;
+    transform: rotate(-10deg) scale(1.2);
+}
+
+.language-option[data-language="german"] .language-flag::before {
+    content: '🥨';
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.language-option[data-language="german"]:hover .language-flag::before {
+    opacity: 1;
+    transform: rotate(20deg) scale(1.2);
+}
+
+.language-option[data-language="italian"] .language-flag::before {
+    content: '🍕';
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.language-option[data-language="italian"]:hover .language-flag::before {
+    opacity: 1;
+    transform: rotate(-15deg) scale(1.2);
+}
+
+.language-option:hover .language-flag {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.language-option.active .language-flag {
+    animation: flag-celebration 0.6s ease;
+}
+
+/* ========== CULTURAL CELEBRATION ANIMATIONS ========== */
+@keyframes flag-celebration {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2) rotate(-5deg); }
+    50% { transform: scale(1.3) rotate(5deg); }
+    75% { transform: scale(1.2) rotate(-2deg); }
+    100% { transform: scale(1.1); }
+}
+
+/* French celebration - Eiffel Tower sparkle */
+.language-option[data-language="french"].active .language-flag {
+    animation: french-celebration 1.2s ease;
+}
+
+@keyframes french-celebration {
+    0% { transform: scale(1); filter: brightness(1); }
+    25% { transform: scale(1.2) rotate(-3deg); filter: brightness(1.3) hue-rotate(10deg); }
+    50% { transform: scale(1.3) rotate(3deg); filter: brightness(1.5) hue-rotate(-10deg); }
+    75% { transform: scale(1.2) rotate(-1deg); filter: brightness(1.2); }
+    100% { transform: scale(1.1); filter: brightness(1); }
+}
+
+/* Spanish celebration - Flamenco passion */
+.language-option[data-language="spanish"].active .language-flag {
+    animation: spanish-celebration 1s ease;
+}
+
+@keyframes spanish-celebration {
+    0% { transform: scale(1) rotate(0deg); }
+    20% { transform: scale(1.1) rotate(-8deg); }
+    40% { transform: scale(1.2) rotate(8deg); }
+    60% { transform: scale(1.3) rotate(-5deg); }
+    80% { transform: scale(1.2) rotate(3deg); }
+    100% { transform: scale(1.1) rotate(0deg); }
+}
+
+/* German celebration - Bavarian precision */
+.language-option[data-language="german"].active .language-flag {
+    animation: german-celebration 1.5s ease;
+}
+
+@keyframes german-celebration {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15) translateY(-5px); }
+    50% { transform: scale(1.25) translateY(-8px); }
+    75% { transform: scale(1.15) translateY(-5px); }
+    100% { transform: scale(1.1) translateY(0); }
+}
+
+/* Italian celebration - Renaissance flourish */
+.language-option[data-language="italian"].active .language-flag {
+    animation: italian-celebration 1.3s ease;
+}
+
+@keyframes italian-celebration {
+    0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+    30% { transform: scale(1.2) rotate(10deg); filter: brightness(1.2); }
+    60% { transform: scale(1.3) rotate(-5deg); filter: brightness(1.4); }
+    90% { transform: scale(1.15) rotate(2deg); filter: brightness(1.1); }
+    100% { transform: scale(1.1) rotate(0deg); filter: brightness(1); }
+}
+
+/* ========== ENHANCED TEXT STYLING ========== */
+.language-name {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.language-level {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== CHECKMARK ANIMATION ENHANCEMENT ========== */
+.language-option.active::after {
+    content: '✓';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #58cc02, #4ade80);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    animation: checkmark-bounce 0.6s ease;
+    box-shadow: 0 4px 12px rgba(88, 204, 2, 0.4);
+    border: 2px solid white;
+    z-index: 4;
+}
+
+@keyframes checkmark-bounce {
+    0% { 
+        transform: scale(0) rotate(-180deg); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: scale(1.3) rotate(-90deg); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+    }
+}
+
+/* ========== SUBTLE ANIMATION FOR NON-ACTIVE CARDS ========== */
+.language-option:not(.active) {
+    animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+.language-option:hover {
+    animation: none; /* Stop pulse on hover */
+}
+
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+    .language-flag {
+        font-size: 3rem;
+    }
+    
+    .language-option {
+        padding: var(--space-md);
+    }
+    
+    .language-option:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .language-option.active {
+        transform: translateY(-3px) scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .language-flag {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .language-name {
+        font-size: 1.1rem;
+    }
+    
+    .language-level {
+        font-size: 0.8rem;
+    }
+    
+    .language-option.active::after {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* ========== ACCESSIBILITY IMPROVEMENTS ========== */
+@media (prefers-reduced-motion: reduce) {
+    .language-option,
+    .language-flag,
+    .language-option::before,
+    .language-option::after {
+        animation: none !important;
+        transition-duration: 0.1s !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .language-option {
+        border: 3px solid #000;
+    }
+    
+    .language-option.active {
+        border-color: #fff;
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    .language-name,
+    .language-level {
+        text-shadow: 2px 2px 4px #000;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .language-option {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .language-option::before,
+    .language-option::after {
+        display: none !important;
+    }
+    
+    .language-name,
+    .language-level {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+}
 /* ========== ENHANCED HOVER & ACTIVE STATES ========== */
 .language-option:hover {
     transform: translateY(-8px) scale(1.02);
