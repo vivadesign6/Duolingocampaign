@@ -113,26 +113,52 @@
             object-position: center;
             transition: all 0.8s ease;
             display: block;
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 1;
         }
 
-        /* Fallback styling when image doesn't load */
-        .carpet-image:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"]) {
+        .carpet-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(45deg, #1cb0f6, #58cc02);
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
         }
 
-        .carpet-image:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"])::after {
-            content: "🧞‍♂️ Magic Carpet";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .placeholder-content {
+            text-align: center;
             color: white;
-            font-size: 1.2rem;
+        }
+
+        .carpet-emoji {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .carpet-text {
+            font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .carpet-subtext {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .clarity-overlay {
@@ -141,33 +167,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(2px);
             transition: all 0.8s ease;
             pointer-events: none;
-            z-index: 2;
+            z-index: 15;
         }
 
-        /* Proficiency levels - adjusted for better visibility */
+        /* Proficiency levels - much lighter for better visibility */
         .beginner .clarity-overlay { 
-            opacity: 0.7; 
-            backdrop-filter: blur(12px);
-            background: rgba(255,255,255,0.6);
+            opacity: 0.6; 
+            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.5);
         }
         .elementary .clarity-overlay { 
-            opacity: 0.5; 
-            backdrop-filter: blur(8px);
-            background: rgba(255,255,255,0.4);
+            opacity: 0.4; 
+            backdrop-filter: blur(5px);
+            background: rgba(255,255,255,0.3);
         }
         .intermediate .clarity-overlay { 
-            opacity: 0.25; 
-            backdrop-filter: blur(3px);
-            background: rgba(255,255,255,0.2);
+            opacity: 0.2; 
+            backdrop-filter: blur(2px);
+            background: rgba(255,255,255,0.15);
         }
         .advanced .clarity-overlay { 
-            opacity: 0.1; 
+            opacity: 0.05; 
             backdrop-filter: blur(1px);
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
         }
         .fluent .clarity-overlay { 
             opacity: 0; 
@@ -181,7 +207,7 @@
             left: 15px;
             display: flex;
             gap: 8px;
-            z-index: 10;
+            z-index: 20;
         }
 
         .circle {
@@ -620,7 +646,18 @@
                     <!-- Left Side - Carpet Preview -->
                     <div class="carpet-preview">
                         <div class="carpet-container intermediate" id="carpetContainer">
-                            <img src="images/french-carpet.jpg" alt="French Language Learning Carpet" class="carpet-image" id="carpetImage" onerror="this.style.background='linear-gradient(45deg, #1cb0f6, #58cc02)'; this.style.display='block';">
+                            <!-- Fallback content that's always visible -->
+                            <div class="carpet-placeholder" id="carpetPlaceholder">
+                                <div class="placeholder-content">
+                                    <div class="carpet-emoji">🧞‍♂️</div>
+                                    <div class="carpet-text">Magic Carpet</div>
+                                    <div class="carpet-subtext">French Learning Journey</div>
+                                </div>
+                            </div>
+                            <!-- Actual carpet image (will replace placeholder when loaded) -->
+                            <img src="images/french-carpet.jpg" alt="French Language Learning Carpet" class="carpet-image" id="carpetImage" 
+                                 onload="this.style.zIndex='10'; document.getElementById('carpetPlaceholder').style.display='none';"
+                                 onerror="console.log('Image failed to load:', this.src);">
                             <div class="clarity-overlay" id="clarityOverlay"></div>
                             <div class="mastery-circles">
                                 <div class="circle" id="streakCircle">12</div>
@@ -834,6 +871,7 @@
                 proficiency: 'Intermediate French',
                 progress: '15 more lessons to unlock Advanced clarity',
                 image: 'images/french-carpet.jpg',
+                fallbackImage: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300"><rect width="450" height="300" fill="%231cb0f6"/><text x="225" y="130" text-anchor="middle" fill="white" font-size="60">🇫🇷</text><text x="225" y="180" text-anchor="middle" fill="white" font-size="24">French Carpet</text></svg>',
                 achievements: ['Week Streak', 'Grammar Master', 'Pronunciation Pro'],
                 nextMilestone: 'Progress to Advanced Level',
                 progressText: '67% Complete • 15 lessons remaining',
@@ -848,6 +886,7 @@
                 proficiency: 'Elementary Spanish',
                 progress: '22 more lessons to unlock Intermediate clarity',
                 image: 'images/spanish-carpet.jpg',
+                fallbackImage: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300"><rect width="450" height="300" fill="%23ff9600"/><text x="225" y="130" text-anchor="middle" fill="white" font-size="60">🇪🇸</text><text x="225" y="180" text-anchor="middle" fill="white" font-size="24">Spanish Carpet</text></svg>',
                 achievements: ['First Week', 'Vocabulary Builder', 'Daily Learner'],
                 nextMilestone: 'Progress to Intermediate Level',
                 progressText: '35% Complete • 22 lessons remaining',
@@ -862,6 +901,7 @@
                 proficiency: 'Beginner German',
                 progress: '38 more lessons to unlock Elementary clarity',
                 image: 'images/german-carpet.jpg',
+                fallbackImage: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300"><rect width="450" height="300" fill="%2358cc02"/><text x="225" y="130" text-anchor="middle" fill="white" font-size="60">🇩🇪</text><text x="225" y="180" text-anchor="middle" fill="white" font-size="24">German Carpet</text></svg>',
                 achievements: ['Getting Started', 'First Lesson'],
                 nextMilestone: 'Progress to Elementary Level',
                 progressText: '15% Complete • 38 lessons remaining',
@@ -876,6 +916,7 @@
                 proficiency: 'Advanced Italian',
                 progress: '10 more lessons to unlock Fluent clarity',
                 image: 'images/italian-carpet.jpg',
+                fallbackImage: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300"><rect width="450" height="300" fill="%23ce82ff"/><text x="225" y="130" text-anchor="middle" fill="white" font-size="60">🇮🇹</text><text x="225" y="180" text-anchor="middle" fill="white" font-size="24">Italian Carpet</text></svg>',
                 achievements: ['Month Streak', 'Conversation Master', 'Culture Expert', 'Advanced Grammar'],
                 nextMilestone: 'Progress to Fluent Level',
                 progressText: '85% Complete • 10 lessons remaining',
@@ -919,9 +960,34 @@
             carpetContainer.className = `carpet-container ${data.level}`;
             
             // Update carpet image with fade effect
+            const placeholder = document.getElementById('carpetPlaceholder');
             carpetImage.style.opacity = '0.5';
+            
             setTimeout(() => {
-                carpetImage.src = data.image;
+                // Try to load the main image first
+                const tempImg = new Image();
+                tempImg.onload = function() {
+                    // Main image loaded successfully
+                    carpetImage.src = data.image;
+                    carpetImage.style.zIndex = '10';
+                    if (placeholder) placeholder.style.display = 'none';
+                };
+                tempImg.onerror = function() {
+                    // Main image failed, use fallback
+                    carpetImage.src = data.fallbackImage;
+                    carpetImage.style.zIndex = '10';
+                    if (placeholder) placeholder.style.display = 'none';
+                };
+                tempImg.src = data.image;
+                
+                // Update placeholder text
+                if (placeholder) {
+                    const subtext = placeholder.querySelector('.carpet-subtext');
+                    if (subtext) {
+                        subtext.textContent = `${data.proficiency} Journey`;
+                    }
+                }
+                
                 carpetImage.style.opacity = '1';
             }, 300);
             
@@ -1039,6 +1105,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set initial language (French is already active)
             selectLanguage('french');
+            
+            // Check if carpet image loads successfully
+            const carpetImage = document.getElementById('carpetImage');
+            const placeholder = document.getElementById('carpetPlaceholder');
+            
+            if (carpetImage && placeholder) {
+                carpetImage.addEventListener('load', function() {
+                    this.style.zIndex = '10';
+                    placeholder.style.display = 'none';
+                });
+                
+                carpetImage.addEventListener('error', function() {
+                    console.log('Carpet image failed to load:', this.src);
+                    // Keep placeholder visible if image fails to load
+                    placeholder.style.display = 'flex';
+                });
+            }
             
             // Add hover effects to language options
             document.querySelectorAll('.language-option').forEach(option => {
