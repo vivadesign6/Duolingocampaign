@@ -311,6 +311,14 @@ a:hover {
     height: auto;
 }
 
+/* Make FAQ hero match Magic Carpet hero dimensions */
+.faq-hero.wide-hero {
+    min-height: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
 /* ========== FOOTER STYLES ========== */
 .site-footer {
     background-color: #2d3748;
