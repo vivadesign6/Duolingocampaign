@@ -62,33 +62,42 @@
 
 /* FAQ Header */
 .faq-hero {
-    height: 300px;
+    height: 500px; /* Increased height for more space */
     background-color: #58a700;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.faq-hero .container {
+    text-align: center;
+    padding-top: 4rem; /* Add some top padding to push content down */
 }
 
 .faq-hero h1 {
     font-size: 3.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .faq-hero p {
     font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .wide-hero {
-        height: auto;
-        min-height: 250px;
+    .faq-hero .container {
+        padding-top: 6rem; /* Reduce padding on mobile */
     }
     
-    .customizer-hero h1, 
     .faq-hero h1 {
         font-size: 2.5rem;
     }
     
-    .customizer-hero p,
     .faq-hero p {
         font-size: 1.1rem;
+        padding: 0 1rem;
     }
 }
 
