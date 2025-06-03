@@ -1,7 +1,8 @@
 [build]
-  publish = "." 
+  publish = "."
 
 [[redirects]]
+  # Match ANY path under ANY subdomain of lovely-bienenstitch-0bad3e.netlify.app
   from       = "/*"
   to         = "https://lovely-bienenstitch-0bad3e.netlify.app/:splat"
   status     = 301
