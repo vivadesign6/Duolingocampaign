@@ -32,6 +32,7 @@
 .magic-carpet-hero .container {
     position: relative;
     z-index: 2;
+    padding-top: 6rem; /* Adjust this value as needed */
 }
 
 .magic-carpet-hero h1 {
