@@ -455,92 +455,292 @@
     margin-bottom: var(--space-xl);
 }
 
+/* ========== OPTIMIZED LANGUAGE CARD BACKGROUNDS ========== */
+/* Best approach: SVG patterns + cultural symbols + smooth animations */
+
+/* Base language option styling */
 .language-option {
-    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
-    border: 3px solid transparent;
-    border-radius: 15px;
-    padding: var(--space-lg);
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
 }
 
+/* Subtle pattern overlay for texture */
 .language-option::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(28, 176, 246, 0.1), transparent);
-    transition: left 0.5s;
-}
-
-.language-option:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border-color: rgba(28, 176, 246, 0.3);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 .language-option:hover::before {
-    left: 100%;
+    opacity: 0.2;
+}
+
+/* Content positioning above background */
+.language-option > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* ========== FRENCH - EIFFEL TOWER & CAFÉ PATTERN ========== */
+.language-option[data-language="french"] {
+    background: linear-gradient(135deg, #1cb0f6 0%, #0ea5e9 50%, #e3f2fd 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="french-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="40" fill="none"/><g fill="%23ffffff" opacity="0.1"><polygon points="20,5 22,15 18,15" transform="translate(0,0)"/><polygon points="20,5 22,15 18,15" transform="translate(0,20)"/><circle cx="10" cy="30" r="2"/><circle cx="30" cy="10" r="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23french-pattern)"/></svg>');
+    color: white;
+}
+
+.language-option[data-language="french"]::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.3"><path d="M50,10 L52,40 L48,40 Z M45,40 L55,40 M45,50 L55,50 M45,60 L55,60"/><circle cx="25" cy="75" r="3"/><rect x="70" y="70" width="8" height="15" rx="1"/></g></svg>');
+}
+
+/* ========== SPANISH - FLAMENCO & ARCHITECTURE PATTERN ========== */
+.language-option[data-language="spanish"] {
+    background: linear-gradient(135deg, #ff9600 0%, #e67e00 50%, #fff3e0 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="spanish-pattern" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="none"/><g fill="%23ffffff" opacity="0.15"><circle cx="25" cy="25" r="8" fill="none" stroke="%23ffffff" stroke-width="1"/><polygon points="25,10 30,20 20,20"/><rect x="15" y="35" width="20" height="8" rx="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23spanish-pattern)"/></svg>');
+    color: white;
+}
+
+.language-option[data-language="spanish"]::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.4"><path d="M30,70 Q40,50 50,70 Q60,50 70,70" stroke="%23ffffff" stroke-width="2" fill="none"/><polygon points="45,25 55,25 50,15"/><rect x="20" y="75" width="60" height="15" rx="3"/></g></svg>');
+}
+
+/* ========== GERMAN - CASTLE & BAVARIAN PATTERN ========== */
+.language-option[data-language="german"] {
+    background: linear-gradient(135deg, #58cc02 0%, #4ade80 50%, #e8f5e8 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="german-pattern" patternUnits="userSpaceOnUse" width="45" height="45"><rect width="45" height="45" fill="none"/><g fill="%23ffffff" opacity="0.12"><rect x="15" y="15" width="15" height="20" rx="2"/><polygon points="22.5,10 27,20 18,20"/><circle cx="10" cy="35" r="2"/><circle cx="35" cy="10" r="2"/></g></pattern></defs><rect width="200" height="200" fill="url(%23german-pattern)"/></svg>');
+    color: white;
+}
+
+.language-option[data-language="german"]::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.3"><rect x="35" y="40" width="30" height="35" rx="2"/><polygon points="50,25 40,40 60,40"/><rect x="30" y="75" width="40" height="3"/><circle cx="20" cy="80" r="4"/><circle cx="80" cy="20" r="4"/></g></svg>');
+}
+
+/* ========== ITALIAN - COLOSSEUM & RENAISSANCE PATTERN ========== */
+.language-option[data-language="italian"] {
+    background: linear-gradient(135deg, #ce82ff 0%, #b366ff 50%, #f3e5f5 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="italian-pattern" patternUnits="userSpaceOnUse" width="60" height="60"><rect width="60" height="60" fill="none"/><g fill="%23ffffff" opacity="0.1"><ellipse cx="30" cy="30" rx="20" ry="25"/><rect x="15" y="45" width="30" height="8"/><rect x="20" y="35" width="20" height="3"/><rect x="20" y="25" width="20" height="3"/></g></pattern></defs><rect width="200" height="200" fill="url(%23italian-pattern)"/></svg>');
+    color: white;
+}
+
+.language-option[data-language="italian"]::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.4"><ellipse cx="50" cy="50" rx="25" ry="30" fill="none" stroke="%23ffffff" stroke-width="2"/><rect x="35" y="65" width="30" height="8" rx="1"/><rect x="40" y="55" width="20" height="2"/><rect x="40" y="45" width="20" height="2"/><rect x="40" y="35" width="20" height="2"/></g></svg>');
+}
+
+/* ========== ENHANCED HOVER & ACTIVE STATES ========== */
+.language-option:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .language-option.active {
-    border-color: #1cb0f6;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    box-shadow: 0 8px 20px rgba(28, 176, 246, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    animation: active-glow 2s infinite alternate;
 }
 
+@keyframes active-glow {
+    0% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3); }
+    100% { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.5); }
+}
+
+/* ========== ENHANCED LANGUAGE FLAGS ========== */
+.language-flag {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.language-option:hover .language-flag {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.language-option.active .language-flag {
+    animation: flag-celebration 0.6s ease;
+}
+
+@keyframes flag-celebration {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2) rotate(-5deg); }
+    50% { transform: scale(1.3) rotate(5deg); }
+    75% { transform: scale(1.2) rotate(-2deg); }
+    100% { transform: scale(1.1); }
+}
+
+/* ========== ENHANCED TEXT STYLING ========== */
+.language-name {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.language-level {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== CHECKMARK ANIMATION ENHANCEMENT ========== */
 .language-option.active::after {
     content: '✓';
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     background: linear-gradient(135deg, #58cc02, #4ade80);
     color: white;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    animation: checkmark-bounce 0.5s ease;
-    box-shadow: 0 2px 8px rgba(88, 204, 2, 0.3);
+    font-size: 1.1rem;
+    animation: checkmark-bounce 0.6s ease;
+    box-shadow: 0 4px 12px rgba(88, 204, 2, 0.4);
+    border: 2px solid white;
+    z-index: 4;
 }
 
 @keyframes checkmark-bounce {
-    0% { transform: scale(0) rotate(-45deg); }
-    50% { transform: scale(1.2) rotate(0deg); }
-    100% { transform: scale(1) rotate(0deg); }
+    0% { 
+        transform: scale(0) rotate(-180deg); 
+        opacity: 0; 
+    }
+    50% { 
+        transform: scale(1.3) rotate(-90deg); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+    }
 }
 
-.language-flag {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    display: block;
-    transition: transform 0.3s ease;
+/* ========== SUBTLE ANIMATION FOR NON-ACTIVE CARDS ========== */
+.language-option:not(.active) {
+    animation: gentle-pulse 4s ease-in-out infinite;
 }
 
-.language-option:hover .language-flag {
-    transform: scale(1.1);
+@keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
 }
 
-.language-name {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
+.language-option:hover {
+    animation: none; /* Stop pulse on hover */
 }
 
-.language-level {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+    .language-flag {
+        font-size: 3rem;
+    }
+    
+    .language-option {
+        padding: var(--space-md);
+    }
+    
+    .language-option:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .language-option.active {
+        transform: translateY(-3px) scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .language-flag {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .language-name {
+        font-size: 1.1rem;
+    }
+    
+    .language-level {
+        font-size: 0.8rem;
+    }
+    
+    .language-option.active::after {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* ========== ACCESSIBILITY IMPROVEMENTS ========== */
+@media (prefers-reduced-motion: reduce) {
+    .language-option,
+    .language-flag,
+    .language-option::before,
+    .language-option::after {
+        animation: none !important;
+        transition-duration: 0.1s !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .language-option {
+        border: 3px solid #000;
+    }
+    
+    .language-option.active {
+        border-color: #fff;
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    .language-name,
+    .language-level {
+        text-shadow: 2px 2px 4px #000;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .language-option {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .language-option::before,
+    .language-option::after {
+        display: none !important;
+    }
+    
+    .language-name,
+    .language-level {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
 }
 
 /* ========== CLARITY SECTION ========== */
