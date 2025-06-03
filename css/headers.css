@@ -71,12 +71,12 @@
 
 .faq-hero .container {
     text-align: center;
-    padding-top: 4rem; /* Add some top padding to push content down */
+    padding-top: 8rem; /* Add some top padding to push content down */
 }
 
 .faq-hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .faq-hero p {
