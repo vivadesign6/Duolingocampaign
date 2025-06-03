@@ -190,8 +190,8 @@ select.form-input {
 }
 
 .signup-image img {
-    max-width: 90%;
-    max-height: 400px;
+    max-width: 100%; /* Change from 90% to 100% */
+    max-height: 500px; /* Increase from 400px to 500px or more */
     width: auto;
     height: auto;
     object-fit: contain;
