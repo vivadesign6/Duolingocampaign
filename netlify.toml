@@ -1,0 +1,20 @@
+# ┌────────────────────────────────────────────────────────────────────────────┐
+# │  netlify.toml (place this in the root of your GitHub repo)               │
+# └────────────────────────────────────────────────────────────────────────────┘
+
+[build]
+  # Publish directory is the folder Netlify will serve from.
+  # Since you are using plain HTML/CSS/JS in the repo root, just publish "."
+  publish = "."
+
+[[redirects]]
+  # Match ANY path under ANY subdomain of lovely-bienenstitch-0bad3e.netlify.app
+  from      = "/*"
+  to        = "https://lovely-bienenstitch-0bad3e.netlify.app/:splat"
+  status    = 301
+  force     = true
+
+  # Only perform this redirect when the Host header matches ANY subdomain of
+  # lovely-bienenstitch-0bad3e.netlify.app (i.e. preview URLs like
+  # 682c93318f1bffbf913fa694--lovely-bienenstitch-0bad3e.netlify.app)
+  conditions = { Host = ["*.lovely-bienenstitch-0bad3e.netlify.app"] }
