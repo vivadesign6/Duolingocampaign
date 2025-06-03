@@ -19,12 +19,15 @@
         /* Enhanced Magic Carpet Language Learning Styles */
         .magic-carpet-hero {
             padding: var(--space-3xl) 0;
-            background: linear-gradient(135deg, #1cb0f6 0%, #58cc02 100%);
+            background-image: url('images/magic-carpet-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 400px;
+            min-height: 500px;
             display: flex;
             align-items: center;
         }
@@ -32,37 +35,12 @@
         .magic-carpet-hero::before {
             content: '';
             position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 60%;
-            height: 70%;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float-blob 8s ease-in-out infinite;
-        }
-
-        .magic-carpet-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -15%;
-            left: -10%;
-            width: 50%;
-            height: 60%;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            animation: float-blob-reverse 10s ease-in-out infinite;
-        }
-
-        @keyframes float-blob {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(10deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-
-        @keyframes float-blob-reverse {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(30px) rotate(-10deg); }
-            100% { transform: translateY(0) rotate(0deg); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
 
         .magic-carpet-hero h1 {
@@ -71,7 +49,7 @@
             margin-bottom: var(--space-lg);
             position: relative;
             z-index: 2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 3px 6px rgba(0,0,0,0.5);
         }
 
         .magic-carpet-hero p {
@@ -83,7 +61,7 @@
             z-index: 2;
             max-width: 600px;
             margin: 0 auto;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .carpet-learning-section {
@@ -112,8 +90,8 @@
 
         .carpet-container {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 420px;
+            height: 320px;
             margin-bottom: var(--space-lg);
             border-radius: 20px;
             overflow: hidden;
@@ -129,7 +107,9 @@
         .carpet-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
+            background: #f8f9fa;
             transition: all 0.8s ease;
         }
 
@@ -509,8 +489,8 @@
             }
             
             .carpet-container {
-                width: 300px;
-                height: 300px;
+                width: 320px;
+                height: 240px;
             }
             
             .stats-grid {
@@ -522,14 +502,15 @@
             }
 
             .magic-carpet-hero {
-                min-height: 300px;
+                min-height: 350px;
+                background-position: center center;
             }
         }
 
         @media (max-width: 480px) {
             .carpet-container {
-                width: 280px;
-                height: 280px;
+                width: 300px;
+                height: 220px;
             }
 
             .language-grid {
@@ -538,6 +519,19 @@
 
             .action-buttons {
                 flex-direction: column;
+            }
+
+            .magic-carpet-hero {
+                min-height: 300px;
+                padding: var(--space-2xl) 0;
+            }
+
+            .magic-carpet-hero h1 {
+                font-size: 2rem;
+            }
+
+            .magic-carpet-hero p {
+                font-size: var(--font-base);
             }
         }
     </style>
@@ -574,7 +568,7 @@
     <main class="main-content">
         <section class="magic-carpet-hero">
             <div class="container">
-                <h1>🧞‍♂️ Magic Carpet Journey</h1>
+                <h1>Magic Carpet Journey</h1>
                 <p>Watch your carpet become clearer as you master new languages!</p>
             </div>
         </section>
