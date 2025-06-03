@@ -194,6 +194,10 @@ a:hover {
     width: 100%;
 }
 
+.cta-section {
+    margin-bottom: var(--space-3xl);
+}
+
 /* ========== NAVIGATION ========== */
 .main-navigation {
     background-color: var(--white);
