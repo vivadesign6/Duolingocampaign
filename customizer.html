@@ -90,13 +90,15 @@
 
         .carpet-container {
             position: relative;
-            width: 420px;
-            height: 320px;
+            width: 450px;
+            height: 300px;
             margin-bottom: var(--space-lg);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.5s ease;
+            background: linear-gradient(45deg, #e3f2fd, #f3e5f5);
+            border: 2px solid #e0e0e0;
         }
 
         .carpet-container:hover {
@@ -107,10 +109,30 @@
         .carpet-image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
-            background: #f8f9fa;
             transition: all 0.8s ease;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fallback styling when image doesn't load */
+        .carpet-image:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"]) {
+            background: linear-gradient(45deg, #1cb0f6, #58cc02);
+            position: relative;
+        }
+
+        .carpet-image:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"])::after {
+            content: "🧞‍♂️ Magic Carpet";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .clarity-overlay {
@@ -119,46 +141,52 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(4px);
             transition: all 0.8s ease;
             pointer-events: none;
+            z-index: 2;
         }
 
-        /* Proficiency levels */
+        /* Proficiency levels - adjusted for better visibility */
         .beginner .clarity-overlay { 
-            opacity: 0.8; 
-            backdrop-filter: blur(15px); 
+            opacity: 0.7; 
+            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.6);
         }
         .elementary .clarity-overlay { 
-            opacity: 0.6; 
-            backdrop-filter: blur(10px); 
+            opacity: 0.5; 
+            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.4);
         }
         .intermediate .clarity-overlay { 
-            opacity: 0.3; 
-            backdrop-filter: blur(5px); 
+            opacity: 0.25; 
+            backdrop-filter: blur(3px);
+            background: rgba(255,255,255,0.2);
         }
         .advanced .clarity-overlay { 
             opacity: 0.1; 
-            backdrop-filter: blur(2px); 
+            backdrop-filter: blur(1px);
+            background: rgba(255,255,255,0.1);
         }
         .fluent .clarity-overlay { 
             opacity: 0; 
-            backdrop-filter: blur(0px); 
+            backdrop-filter: blur(0px);
+            background: transparent;
         }
 
         .mastery-circles {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             display: flex;
-            gap: 10px;
-            z-index: 3;
+            gap: 8px;
+            z-index: 10;
         }
 
         .circle {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             background: #58cc02;
             display: flex;
@@ -166,9 +194,10 @@
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
             animation: pulse 2s infinite;
+            border: 2px solid white;
         }
 
         @keyframes pulse {
@@ -489,8 +518,8 @@
             }
             
             .carpet-container {
-                width: 320px;
-                height: 240px;
+                width: 350px;
+                height: 230px;
             }
             
             .stats-grid {
@@ -509,8 +538,8 @@
 
         @media (max-width: 480px) {
             .carpet-container {
-                width: 300px;
-                height: 220px;
+                width: 320px;
+                height: 210px;
             }
 
             .language-grid {
@@ -532,6 +561,18 @@
 
             .magic-carpet-hero p {
                 font-size: var(--font-base);
+            }
+
+            .circle {
+                width: 30px;
+                height: 30px;
+                font-size: 0.7rem;
+            }
+
+            .mastery-circles {
+                top: 10px;
+                left: 10px;
+                gap: 6px;
             }
         }
     </style>
@@ -579,7 +620,7 @@
                     <!-- Left Side - Carpet Preview -->
                     <div class="carpet-preview">
                         <div class="carpet-container intermediate" id="carpetContainer">
-                            <img src="images/french-carpet.jpg" alt="Language Learning Carpet" class="carpet-image" id="carpetImage">
+                            <img src="images/french-carpet.jpg" alt="French Language Learning Carpet" class="carpet-image" id="carpetImage" onerror="this.style.background='linear-gradient(45deg, #1cb0f6, #58cc02)'; this.style.display='block';">
                             <div class="clarity-overlay" id="clarityOverlay"></div>
                             <div class="mastery-circles">
                                 <div class="circle" id="streakCircle">12</div>
